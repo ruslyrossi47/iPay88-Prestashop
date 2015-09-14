@@ -166,7 +166,7 @@ class iPay88 extends PaymentModule
 			'purl' 			=> Configuration::get('PURL'),
 			'mcode' 		=> Configuration::get('MCODE'),
 			'refNo' 		=> $this->context->cart->id,
-			'amount'		=> $this->context->cart->getOrderTotal(true,Cart::BOTH),
+			'amount'		=> number_format($this->context->cart->getOrderTotal(true,Cart::BOTH), 2),
 			'currency'		=> $this->context->currency->iso_code,
 			'proddesc'      => $this->getProductDesc($params),
 			'customer'		=> $this->context->cookie->customer_firstname,
